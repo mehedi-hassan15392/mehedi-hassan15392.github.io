@@ -1,44 +1,45 @@
-// ================================
-// TYPING ANIMATION
-// ================================
+/* =================================
+   TYPING ANIMATION
+================================= */
 
-const typingText = [
+const words = [
     "CSE Student",
     "Programmer",
     "Web Developer",
-    "Tech Enthusiast"
+    "Tech Enthusiast",
+    "Creative Learner"
 ];
 
-let textIndex = 0;
+let wordIndex = 0;
 let charIndex = 0;
 let deleting = false;
 
-const typingElement = document.getElementById("typing");
+const typing = document.getElementById("typing");
 
 function typeEffect() {
 
-    const currentText = typingText[textIndex];
+    const word = words[wordIndex];
 
     if (!deleting) {
 
-        typingElement.textContent =
-            currentText.substring(0, charIndex + 1);
+        typing.textContent =
+            word.substring(0, charIndex + 1);
 
         charIndex++;
 
-        if (charIndex === currentText.length) {
+        if (charIndex === word.length) {
 
             deleting = true;
 
-            setTimeout(typeEffect, 1500);
+            setTimeout(typeEffect, 1300);
 
             return;
         }
 
     } else {
 
-        typingElement.textContent =
-            currentText.substring(0, charIndex - 1);
+        typing.textContent =
+            word.substring(0, charIndex - 1);
 
         charIndex--;
 
@@ -46,26 +47,65 @@ function typeEffect() {
 
             deleting = false;
 
-            textIndex++;
+            wordIndex++;
 
-            if (textIndex === typingText.length) {
-                textIndex = 0;
+            if (wordIndex >= words.length) {
+                wordIndex = 0;
             }
         }
     }
 
-    setTimeout(typeEffect, deleting ? 50 : 100);
+    setTimeout(
+        typeEffect,
+        deleting ? 45 : 90
+    );
 }
 
 typeEffect();
 
 
-// ================================
-// MOBILE MENU
-// ================================
+/* =================================
+   PARTICLES
+================================= */
 
-const menuBtn = document.querySelector(".menu-btn");
-const navLinks = document.querySelector(".nav-links");
+const particleContainer =
+    document.getElementById("particles");
+
+for (let i = 0; i < 45; i++) {
+
+    const particle =
+        document.createElement("span");
+
+    particle.classList.add("particle");
+
+    particle.style.left =
+        Math.random() * 100 + "%";
+
+    particle.style.animationDuration =
+        (Math.random() * 8 + 7) + "s";
+
+    particle.style.animationDelay =
+        Math.random() * 8 + "s";
+
+    const size =
+        Math.random() * 5 + 2;
+
+    particle.style.width = size + "px";
+    particle.style.height = size + "px";
+
+    particleContainer.appendChild(particle);
+}
+
+
+/* =================================
+   MOBILE NAV
+================================= */
+
+const menuBtn =
+    document.querySelector(".menu-btn");
+
+const navLinks =
+    document.querySelector(".nav-links");
 
 menuBtn.addEventListener("click", () => {
 
@@ -74,9 +114,8 @@ menuBtn.addEventListener("click", () => {
 });
 
 
-// Close menu after clicking link
-
-document.querySelectorAll(".nav-links a").forEach(link => {
+document.querySelectorAll(".nav-links a")
+.forEach(link => {
 
     link.addEventListener("click", () => {
 
@@ -87,19 +126,140 @@ document.querySelectorAll(".nav-links a").forEach(link => {
 });
 
 
-// ================================
-// BACK TO TOP
-// ================================
+/* =================================
+   NAVBAR SCROLL EFFECT
+================================= */
 
-const topBtn = document.getElementById("topBtn");
+const navbar =
+    document.querySelector(".navbar");
 
 window.addEventListener("scroll", () => {
 
-    if (window.scrollY > 500) {
+    if (window.scrollY > 50) {
+
+        navbar.classList.add("scrolled");
+
+    } else {
+
+        navbar.classList.remove("scrolled");
+
+    }
+
+});
+
+
+/* =================================
+   SCROLL REVEAL
+================================= */
+
+const revealElements =
+    document.querySelectorAll(".reveal");
+
+const revealObserver =
+    new IntersectionObserver(
+        (entries) => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("visible");
+
+                    revealObserver.unobserve(
+                        entry.target
+                    );
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.12
+        }
+    );
+
+
+revealElements.forEach(element => {
+
+    revealObserver.observe(element);
+
+});
+
+
+/* =================================
+   SKILL BAR ANIMATION
+================================= */
+
+const skillCards =
+    document.querySelectorAll(".skill-card");
+
+const skillObserver =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("visible");
+
+                    skillObserver.unobserve(
+                        entry.target
+                    );
+
+                }
+
+            });
+
+        },
+        {
+            threshold: .3
+        }
+    );
+
+
+skillCards.forEach(card => {
+
+    skillObserver.observe(card);
+
+});
+
+
+/* =================================
+   MOUSE PARALLAX
+================================= */
+
+const heroImage =
+    document.querySelector(".hero-image");
+
+document.addEventListener("mousemove", (event) => {
+
+    if (window.innerWidth < 900) return;
+
+    const x =
+        (window.innerWidth / 2 - event.clientX) / 50;
+
+    const y =
+        (window.innerHeight / 2 - event.clientY) / 50;
+
+    heroImage.style.transform =
+        `translate(${x}px, ${y}px)`;
+
+});
+
+
+/* =================================
+   BACK TO TOP
+================================= */
+
+const topBtn =
+    document.getElementById("topBtn");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 600) {
 
         topBtn.style.display = "flex";
-        topBtn.style.alignItems = "center";
-        topBtn.style.justifyContent = "center";
 
     } else {
 
@@ -108,6 +268,7 @@ window.addEventListener("scroll", () => {
     }
 
 });
+
 
 topBtn.addEventListener("click", () => {
 
@@ -119,41 +280,52 @@ topBtn.addEventListener("click", () => {
 });
 
 
-// ================================
-// SCROLL REVEAL
-// ================================
+/* =================================
+   3D PROJECT CARD EFFECT
+================================= */
 
-const cards = document.querySelectorAll(
-    ".skill-card, .hobby, .project-card, .about-container"
-);
+const projectCards =
+    document.querySelectorAll(".project-card");
 
-const observer = new IntersectionObserver(
-    entries => {
+projectCards.forEach(card => {
 
-        entries.forEach(entry => {
+    card.addEventListener("mousemove", (event) => {
 
-            if (entry.isIntersecting) {
+        const rect =
+            card.getBoundingClientRect();
 
-                entry.target.style.opacity = "1";
-                entry.target.style.transform = "translateY(0)";
+        const x =
+            event.clientX - rect.left;
 
-            }
+        const y =
+            event.clientY - rect.top;
 
-        });
+        const centerX =
+            rect.width / 2;
 
-    },
-    {
-        threshold: 0.15
-    }
-);
+        const centerY =
+            rect.height / 2;
+
+        const rotateX =
+            ((y - centerY) / centerY) * -4;
+
+        const rotateY =
+            ((x - centerX) / centerX) * 4;
+
+        card.style.transform =
+            `perspective(800px)
+             rotateX(${rotateX}deg)
+             rotateY(${rotateY}deg)
+             translateY(-8px)`;
+
+    });
 
 
-cards.forEach(card => {
+    card.addEventListener("mouseleave", () => {
 
-    card.style.opacity = "0";
-    card.style.transform = "translateY(40px)";
-    card.style.transition = "all 0.8s ease";
+        card.style.transform =
+            "perspective(800px) rotateX(0) rotateY(0) translateY(0)";
 
-    observer.observe(card);
+    });
 
 });

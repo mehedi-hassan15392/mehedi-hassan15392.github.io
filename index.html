@@ -8,23 +8,27 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Icons -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
-    <!-- Floating Background Shapes -->
-    <div class="circle circle1"></div>
-    <div class="circle circle2"></div>
-    <div class="circle circle3"></div>
+    <!-- Animated Background -->
+    <div class="background">
+        <div class="blob blob1"></div>
+        <div class="blob blob2"></div>
+        <div class="blob blob3"></div>
+        <div class="blob blob4"></div>
+    </div>
+
+    <div id="particles"></div>
 
     <!-- NAVBAR -->
-    <header>
+    <header id="header">
+
         <nav class="navbar">
 
             <div class="logo">
@@ -45,34 +49,42 @@
             </div>
 
         </nav>
+
     </header>
 
 
-    <!-- HOME -->
+    <!-- HERO -->
     <section id="home" class="hero">
 
-        <div class="hero-content">
+        <div class="hero-content reveal">
 
-            <p class="small-text">HELLO, I'M</p>
+            <div class="hello">
+                <span class="hello-line"></span>
+                HELLO, I'M
+            </div>
 
             <h1>
                 Ariful Hassan
-                <span>Mehedi</span>
+                <span class="gradient-text">Mehedi</span>
             </h1>
 
-            <h2>
+            <div class="typing-box">
+                <span>I'm a </span>
                 <span id="typing"></span>
-            </h2>
+                <span class="cursor">|</span>
+            </div>
 
             <p class="hero-description">
                 A passionate Computer Science and Engineering student
-                who loves programming, technology and creating interesting projects.
+                who loves programming, technology, creative projects
+                and learning new things.
             </p>
 
             <div class="hero-buttons">
 
                 <a href="#about" class="btn primary-btn">
-                    Explore Me <i class="fa-solid fa-arrow-down"></i>
+                    Explore Me
+                    <i class="fa-solid fa-arrow-down"></i>
                 </a>
 
                 <a href="CV.pdf" target="_blank" class="btn secondary-btn">
@@ -88,7 +100,8 @@
                     <i class="fa-brands fa-github"></i>
                 </a>
 
-                <a href="https://www.linkedin.com/in/mehedi-hasan-12a010428" target="_blank">
+                <a href="https://www.linkedin.com/in/mehedi-hasan-12a010428"
+                   target="_blank">
                     <i class="fa-brands fa-linkedin"></i>
                 </a>
 
@@ -101,10 +114,16 @@
         </div>
 
 
-        <!-- PROFILE IMAGE -->
-        <div class="hero-image">
+        <!-- PROFILE -->
+        <div class="hero-image reveal">
 
-            <div class="image-circle">
+            <div class="orbit orbit1"></div>
+            <div class="orbit orbit2"></div>
+            <div class="orbit orbit3"></div>
+
+            <div class="profile-glow"></div>
+
+            <div class="profile-wrapper">
 
                 <img src="profile.jpg"
                      alt="Ariful Hassan Mehedi">
@@ -113,12 +132,17 @@
 
             <div class="floating-card card-one">
                 <i class="fa-solid fa-code"></i>
-                Coder
+                Coding
             </div>
 
             <div class="floating-card card-two">
                 <i class="fa-solid fa-laptop-code"></i>
                 Developer
+            </div>
+
+            <div class="floating-card card-three">
+                <i class="fa-solid fa-heart"></i>
+                Creative
             </div>
 
         </div>
@@ -129,58 +153,77 @@
     <!-- ABOUT -->
     <section id="about" class="section">
 
-        <div class="section-title">
-            <p>GET TO KNOW ME</p>
-            <h2>About <span>Me</span></h2>
+        <div class="section-title reveal">
+            <span>GET TO KNOW ME</span>
+            <h2>About <b>Me</b></h2>
         </div>
 
-        <div class="about-container">
+        <div class="about-container reveal">
 
             <div class="about-image">
-                <div class="about-photo">
-                    <img src="profile.jpg" alt="Profile Picture">
+
+                <div class="about-frame">
+
+                    <img src="profile.jpg"
+                         alt="Ariful Hassan Mehedi">
+
                 </div>
+
+                <div class="experience-badge">
+                    <strong>BCSE</strong>
+                    <small>24</small>
+                </div>
+
             </div>
 
             <div class="about-text">
 
-                <h3>
-                    I'm Ariful Hassan Mehedi
-                </h3>
+                <h3>I'm Ariful Hassan Mehedi</h3>
 
                 <p>
                     I am a Computer Science and Engineering student at
                     Bangladesh University of Professionals (BUP).
-                    I enjoy learning programming, exploring new technologies
-                    and developing software projects.
+                    I enjoy programming, exploring technologies and
+                    developing software projects.
                 </p>
 
                 <p>
-                    I have experience with programming languages such as
-                    C, C++, Java, Python and JavaScript. I am also interested
-                    in web development, databases and software development.
+                    My interests include C, C++, Java, Python, JavaScript,
+                    web development, databases and software development.
                 </p>
 
                 <div class="info-grid">
 
-                    <div>
-                        <strong>Name</strong>
-                        <span>Ariful Hassan Mehedi</span>
+                    <div class="info-box">
+                        <i class="fa-solid fa-user"></i>
+                        <div>
+                            <small>Name</small>
+                            <strong>Ariful Hassan Mehedi</strong>
+                        </div>
                     </div>
 
-                    <div>
-                        <strong>Batch</strong>
-                        <span>BCSE 24</span>
+                    <div class="info-box">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <div>
+                            <small>University</small>
+                            <strong>BUP</strong>
+                        </div>
                     </div>
 
-                    <div>
-                        <strong>University</strong>
-                        <span>BUP</span>
+                    <div class="info-box">
+                        <i class="fa-solid fa-code"></i>
+                        <div>
+                            <small>Field</small>
+                            <strong>CSE</strong>
+                        </div>
                     </div>
 
-                    <div>
-                        <strong>Field</strong>
-                        <span>Computer Science & Engineering</span>
+                    <div class="info-box">
+                        <i class="fa-solid fa-layer-group"></i>
+                        <div>
+                            <small>Batch</small>
+                            <strong>BCSE 24</strong>
+                        </div>
                     </div>
 
                 </div>
@@ -193,61 +236,101 @@
 
 
     <!-- SKILLS -->
-    <section id="skills" class="section skills-section">
+    <section id="skills" class="section pink-section">
 
-        <div class="section-title">
-            <p>WHAT I KNOW</p>
-            <h2>My <span>Skills</span></h2>
+        <div class="section-title reveal">
+            <span>WHAT I KNOW</span>
+            <h2>My <b>Skills</b></h2>
         </div>
 
         <div class="skills-container">
 
-            <div class="skill-card">
-                <i class="fa-solid fa-c"></i>
+            <div class="skill-card reveal">
+                <div class="skill-icon">
+                    <i class="fa-solid fa-c"></i>
+                </div>
                 <h3>C / C++</h3>
                 <p>Programming & DSA</p>
+                <div class="skill-line">
+                    <span style="width:88%"></span>
+                </div>
             </div>
 
-            <div class="skill-card">
-                <i class="fa-brands fa-java"></i>
+            <div class="skill-card reveal">
+                <div class="skill-icon">
+                    <i class="fa-brands fa-java"></i>
+                </div>
                 <h3>Java</h3>
                 <p>OOP & JavaFX</p>
+                <div class="skill-line">
+                    <span style="width:82%"></span>
+                </div>
             </div>
 
-            <div class="skill-card">
-                <i class="fa-brands fa-python"></i>
+            <div class="skill-card reveal">
+                <div class="skill-icon">
+                    <i class="fa-brands fa-python"></i>
+                </div>
                 <h3>Python</h3>
                 <p>Programming</p>
+                <div class="skill-line">
+                    <span style="width:78%"></span>
+                </div>
             </div>
 
-            <div class="skill-card">
-                <i class="fa-brands fa-js"></i>
+            <div class="skill-card reveal">
+                <div class="skill-icon">
+                    <i class="fa-brands fa-js"></i>
+                </div>
                 <h3>JavaScript</h3>
                 <p>Web Development</p>
+                <div class="skill-line">
+                    <span style="width:75%"></span>
+                </div>
             </div>
 
-            <div class="skill-card">
-                <i class="fa-brands fa-react"></i>
+            <div class="skill-card reveal">
+                <div class="skill-icon">
+                    <i class="fa-brands fa-react"></i>
+                </div>
                 <h3>React.js</h3>
-                <p>Frontend Development</p>
+                <p>Frontend</p>
+                <div class="skill-line">
+                    <span style="width:70%"></span>
+                </div>
             </div>
 
-            <div class="skill-card">
-                <i class="fa-solid fa-database"></i>
+            <div class="skill-card reveal">
+                <div class="skill-icon">
+                    <i class="fa-solid fa-database"></i>
+                </div>
                 <h3>Database</h3>
-                <p>MySQL / PostgreSQL / SQLite</p>
+                <p>MySQL / PostgreSQL</p>
+                <div class="skill-line">
+                    <span style="width:78%"></span>
+                </div>
             </div>
 
-            <div class="skill-card">
-                <i class="fa-brands fa-github"></i>
-                <h3>Git & GitHub</h3>
+            <div class="skill-card reveal">
+                <div class="skill-icon">
+                    <i class="fa-brands fa-github"></i>
+                </div>
+                <h3>GitHub</h3>
                 <p>Version Control</p>
+                <div class="skill-line">
+                    <span style="width:85%"></span>
+                </div>
             </div>
 
-            <div class="skill-card">
-                <i class="fa-brands fa-linux"></i>
+            <div class="skill-card reveal">
+                <div class="skill-icon">
+                    <i class="fa-brands fa-linux"></i>
+                </div>
                 <h3>Linux</h3>
                 <p>Operating System</p>
+                <div class="skill-line">
+                    <span style="width:72%"></span>
+                </div>
             </div>
 
         </div>
@@ -258,43 +341,43 @@
     <!-- HOBBIES -->
     <section id="hobbies" class="section">
 
-        <div class="section-title">
-            <p>WHEN I'M NOT CODING</p>
-            <h2>Hobbies & <span>Interests</span></h2>
+        <div class="section-title reveal">
+            <span>OUTSIDE CODING</span>
+            <h2>Hobbies & <b>Interests</b></h2>
         </div>
 
         <div class="hobbies-container">
 
-            <div class="hobby">
+            <div class="hobby-card reveal">
                 <div class="hobby-icon">
                     <i class="fa-solid fa-futbol"></i>
                 </div>
                 <h3>Football</h3>
-                <p>I enjoy watching and playing football.</p>
+                <p>Watching & playing football</p>
             </div>
 
-            <div class="hobby">
+            <div class="hobby-card reveal">
                 <div class="hobby-icon">
                     <i class="fa-solid fa-gamepad"></i>
                 </div>
                 <h3>Gaming</h3>
-                <p>Gaming is one of my favorite ways to relax.</p>
+                <p>Gaming & entertainment</p>
             </div>
 
-            <div class="hobby">
+            <div class="hobby-card reveal">
                 <div class="hobby-icon">
                     <i class="fa-solid fa-video"></i>
                 </div>
                 <h3>Video Editing</h3>
-                <p>I enjoy creating and editing videos.</p>
+                <p>Creating creative videos</p>
             </div>
 
-            <div class="hobby">
+            <div class="hobby-card reveal">
                 <div class="hobby-icon">
                     <i class="fa-solid fa-code"></i>
                 </div>
                 <h3>Coding</h3>
-                <p>Learning new programming technologies.</p>
+                <p>Learning new technologies</p>
             </div>
 
         </div>
@@ -303,79 +386,75 @@
 
 
     <!-- PROJECTS -->
-    <section id="projects" class="section projects-section">
+    <section id="projects" class="section pink-section">
 
-        <div class="section-title">
-            <p>MY WORK</p>
-            <h2>Featured <span>Projects</span></h2>
+        <div class="section-title reveal">
+            <span>MY WORK</span>
+            <h2>Featured <b>Projects</b></h2>
         </div>
 
         <div class="projects-container">
 
-            <!-- Project 1 -->
-            <div class="project-card">
+            <div class="project-card reveal">
 
-                <div class="project-icon">
-                    <i class="fa-solid fa-book"></i>
-                </div>
-
-                <div class="project-content">
-
-                    <h3>Study Tracker System</h3>
-
-                    <p>
-                        A console-based study management system that helps
-                        users organize subjects, create study schedules,
-                        monitor learning progress and manage daily tasks.
-                    </p>
-
-                    <div class="tags">
-                        <span>C</span>
-                        <span>DSA</span>
-                        <span>File Handling</span>
+                <div class="project-top">
+                    <div class="project-icon">
+                        <i class="fa-solid fa-book"></i>
                     </div>
 
                     <a href="https://github.com/KingMahmud-debug/Study-Tracker-System"
                        target="_blank"
-                       class="project-link">
-                        View Project
-                        <i class="fa-solid fa-arrow-right"></i>
+                       class="github-btn">
+                        <i class="fa-brands fa-github"></i>
                     </a>
-
                 </div>
+
+                <h3>Study Tracker System</h3>
+
+                <p>
+                    A console-based study management system that allows
+                    users to organize subjects, create schedules,
+                    monitor progress and manage daily tasks.
+                </p>
+
+                <div class="tags">
+                    <span>C</span>
+                    <span>DSA</span>
+                    <span>File Handling</span>
+                </div>
+
+                <div class="project-number">01</div>
 
             </div>
 
 
-            <!-- Project 2 -->
-            <div class="project-card">
+            <div class="project-card reveal">
 
-                <div class="project-icon">
-                    <i class="fa-solid fa-city"></i>
-                </div>
-
-                <div class="project-content">
-
-                    <h3>Smart City Simulator</h3>
-
-                    <p>
-                        An interactive smart city traffic simulator designed
-                        using JavaFX to demonstrate OOP concepts through
-                        real-world traffic management scenarios.
-                    </p>
-
-                    <div class="tags">
-                        <span>Java</span>
-                        <span>JavaFX</span>
-                        <span>OOP</span>
+                <div class="project-top">
+                    <div class="project-icon">
+                        <i class="fa-solid fa-city"></i>
                     </div>
 
-                    <a href="#" class="project-link">
-                        View Project
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-
+                    <div class="github-btn">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </div>
                 </div>
+
+                <h3>Smart City Simulator</h3>
+
+                <p>
+                    An interactive smart city traffic simulator built
+                    with JavaFX demonstrating OOP concepts through
+                    real-world traffic management scenarios.
+                </p>
+
+                <div class="tags">
+                    <span>Java</span>
+                    <span>JavaFX</span>
+                    <span>OOP</span>
+                </div>
+
+                <div class="project-number">02</div>
 
             </div>
 
@@ -385,39 +464,37 @@
 
 
     <!-- CV -->
-    <section id="cv" class="section cv-section">
+    <section id="cv" class="section">
 
-        <div class="cv-box">
+        <div class="cv-box reveal">
+
+            <div class="cv-glow"></div>
 
             <div class="cv-icon">
                 <i class="fa-solid fa-file-pdf"></i>
             </div>
 
-            <h2>Want to know more?</h2>
+            <h2>Let's Keep in Touch</h2>
 
             <p>
-                Check out my complete CV to learn more about my
-                education, skills, projects and achievements.
+                Want to know more about my education, skills,
+                projects and achievements?
             </p>
 
             <div class="cv-buttons">
 
                 <a href="CV.pdf"
                    target="_blank"
-                   class="btn primary-btn">
-
+                   class="btn white-btn">
                     <i class="fa-solid fa-eye"></i>
-                    View My CV
-
+                    View CV
                 </a>
 
                 <a href="CV.pdf"
                    download
-                   class="btn secondary-btn">
-
+                   class="btn outline-white">
                     <i class="fa-solid fa-download"></i>
                     Download CV
-
                 </a>
 
             </div>
@@ -432,7 +509,11 @@
 
         <div class="footer-content">
 
-            <h2>Ariful <span>Mehedi</span></h2>
+            <div class="footer-logo">
+                A<span>M</span>
+            </div>
+
+            <h3>Ariful Hassan Mehedi</h3>
 
             <p>
                 Building ideas with code & creativity.
@@ -456,16 +537,16 @@
 
             </div>
 
-            <p class="copyright">
-                © 2026 Ariful Hassan Mehedi. All Rights Reserved.
-            </p>
+            <div class="copyright">
+                © 2026 Ariful Hassan Mehedi
+            </div>
 
         </div>
 
     </footer>
 
 
-    <!-- BACK TO TOP -->
+    <!-- TOP BUTTON -->
     <button id="topBtn">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
